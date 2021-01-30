@@ -50,22 +50,22 @@
                     <input class="inp-style" type="date" name="">
                 </div>
             </div>
-            <!-- first class -->
+            <!-- first class == f class-->
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <!-- <input id="fclass-count" class="inp-style inp-width" type="number" name=""> -->
+                  
                     <input id="fticket-count" type="text" class="form-control text-center inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <p> <span onclick="handleTicket( 'fticket' ,true)">+</span> <span onclick=" handleTicket('fticket',false)">-</span></p>
                 </div>
             </div>
-            <!-- economy class -->
+            <!-- economy class == eclass-->
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <!-- <input class="inp-style inp-width" type="number" name=""> -->
+                   
                     <input id="eticket-count" type="text" class="form-control text-center inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
@@ -100,11 +100,11 @@
                     </div>
                 </div>
 
-                <!-- adding modal -->
+                
             </div>
-            <button class="btn-style">Launch modal</button>
+            <button onclick=" popup()" class="btn-style">Confirm Your Tickets</button>
         </div>
-            <!-- Modal -->
+            
                 
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
@@ -116,8 +116,7 @@
 
         <script>
            
-          
-             function handleTicket(ticketName,isIncrease) {
+           function handleTicket(ticketName,isIncrease) {
                const ticketCount =  getInputValue(ticketName)
                let ticketNewCount = ticketCount;
                if (isIncrease == true) {
@@ -159,7 +158,19 @@
           document.getElementById('grand-total').innerText = '$' + grandTotal;
 
       }
-    
+          
+      //adding pop-up window    
+          function popup() {
+            var txt;
+            if (confirm("Congratulations!!Your ticket is confirmed!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+            }
+
+
         </script>
         
     </section>
